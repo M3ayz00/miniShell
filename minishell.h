@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: m3ayz00 <m3ayz00@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:32:22 by sait-alo          #+#    #+#             */
-/*   Updated: 2024/07/17 17:24:28 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/17 22:58:44 by m3ayz00          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,6 @@ typedef struct s_redir
 	struct s_redir	*next;
 	char			*file_name;
 	int				fds[2];
-	int				heredoc_fd;
 	int				original_out;
 	int				original_in;
 	t_tok			type;
@@ -142,7 +141,6 @@ typedef struct s_tree
 	struct s_tree	*subtree;
 	t_redir			*redir_list;
 	char			**argv;
-	char			*value;
 	size_t			pipe_count;
 	size_t			argc;
 	t_tok			type;

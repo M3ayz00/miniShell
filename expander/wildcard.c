@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wildcard.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: m3ayz00 <m3ayz00@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 19:37:31 by msaadidi          #+#    #+#             */
-/*   Updated: 2024/07/17 17:39:30 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/17 22:06:22 by m3ayz00          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	**get_matching_files(char *pattern)
 	}
 	if (count == 0)
 	{
-		matched = malloc(sizeof(char *) * 1);
+		matched = m_alloc(sizeof(char *) * 1, ALLOC);
 		matched[0] = NULL;
 	}
 	return (closedir(dir), matched);
