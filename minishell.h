@@ -6,7 +6,7 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:32:22 by sait-alo          #+#    #+#             */
-/*   Updated: 2024/07/19 17:08:01 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:35:09 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -246,6 +246,7 @@ char		*ft_strjoin_char(char *str, char c);
 char		*expand_var(char *var_name);
 char		*expand_variable(char *arg, int *i);
 bool		is_expandable(char c);
+int			check_special_chars(char *str);
 
 /*		Wildcard		*/
 void		expand_wildard(char ***old_argv);

@@ -6,7 +6,7 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:32:22 by sait-alo          #+#    #+#             */
-/*   Updated: 2024/07/19 17:08:01 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:35:23 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,18 @@ void	add_to_new_argv(char *expanded_arg,
 		split_and_add_to_new_argv(expanded_arg, expanded_argv);
 	else
 		*expanded_argv = add_to_argv(expanded_arg, expanded_argv);
+}
+
+int	check_special_chars(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '$' || str[i] == '*')
+			return (1);
+		i++;
+	}
+	return (0);
 }
