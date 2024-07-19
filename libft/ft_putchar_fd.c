@@ -6,10 +6,11 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 10:01:11 by sait-alo          #+#    #+#             */
-/*   Updated: 2024/07/19 17:08:01 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/19 17:12:27 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
