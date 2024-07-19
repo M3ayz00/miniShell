@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m3ayz00 <m3ayz00@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:32:22 by sait-alo          #+#    #+#             */
-/*   Updated: 2024/07/17 22:58:44 by m3ayz00          ###   ########.fr       */
+/*   Updated: 2024/07/19 17:06:23 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ typedef struct s_minishell
 	t_gc	*arena;
 	t_env	**env_list;
 	char	*pwd;
+	char	*oldpwd;
 	size_t	single_quote_count;
 	size_t	double_quote_count;
 	size_t	open_paren_count;
@@ -230,6 +231,8 @@ int			is_directory(const char *path);
 char		*get_path(char *cmd, char *env_path);
 int			minishell_error(char *cmd);
 int			alloc_pipe_fd(pid_t **pid, int (**fd)[2], int n_cmd);
+void		dupping(int is_builtin, t_redir *current, int index, int std_fd);
+void		assign_exit(int status);
 
 /*		Expander		*/
 void		expander(t_tree *root);
