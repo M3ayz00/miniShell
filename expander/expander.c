@@ -6,7 +6,7 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:32:22 by sait-alo          #+#    #+#             */
-/*   Updated: 2024/07/20 16:06:30 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/20 16:15:51 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static int	expand_redirection(t_redir *redir_list)
 	redir = redir_list;
 	to_split = false;
 	did_it_exp = 0;
-	
 	while (redir)
 	{
 		if (redir->type == _HEREDOC)
