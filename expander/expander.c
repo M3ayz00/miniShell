@@ -6,7 +6,7 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:32:22 by sait-alo          #+#    #+#             */
-/*   Updated: 2024/07/19 19:34:36 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/20 16:06:30 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	check_redir(t_redir *redir)
 int	check_files(t_redir *redir)
 {
 	if (!redir->file_name)
-		return (1);
+		return (0);
 	if (count_words(redir->file_name) > 1)
 		return (1);
 	if (count_words(redir->file_name) == 0)
@@ -40,6 +40,7 @@ static int	expand_redirection(t_redir *redir_list)
 	redir = redir_list;
 	to_split = false;
 	did_it_exp = 0;
+	
 	while (redir)
 	{
 		if (redir->type == _HEREDOC)
@@ -84,13 +85,13 @@ void	expander(t_tree *root)
 {
 	if (root->argv)
 	{
-		expand_argv(root);
 		expand_wildard(&root->argv);
+		expand_argv(root);
 		set_dollar_("_", get_last_arg(root->argv));
 	}
 	if (root->redir_list)
 	{
-		expand_redirection(root->redir_list);
 		expand_redir_wildcard(&root->redir_list);
+		expand_redirection(root->redir_list);
 	}
 }

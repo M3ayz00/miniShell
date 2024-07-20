@@ -6,7 +6,7 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 18:08:33 by msaadidi          #+#    #+#             */
-/*   Updated: 2024/07/19 17:08:01 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/20 16:08:19 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ int	handle_output_redirection(t_redir *current, int *errors, int is_builtin)
 	current->fds[1] = open(current->file_name, flags, 0644);
 	if (current->fds[1] < 0)
 	{
+		perror_file(current->file_name);
 		(*errors)++;
-		return (perror_file(current->file_name), 1);
+		return (1);
 	}
 	current->original_out = dup(STDOUT_FILENO);
 	dupping(is_builtin, current, 1, STDOUT_FILENO);

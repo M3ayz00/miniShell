@@ -6,7 +6,7 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:32:22 by sait-alo          #+#    #+#             */
-/*   Updated: 2024/07/19 19:35:23 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/20 15:18:00 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	check_special_chars(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == '$' || str[i] == '*')
+		if (str[i] == '$')
 			return (1);
 		i++;
 	}
