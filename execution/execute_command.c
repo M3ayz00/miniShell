@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute_command.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: m3ayz00 <m3ayz00@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:52:45 by msaadidi          #+#    #+#             */
-/*   Updated: 2024/07/19 17:08:01 by msaadidi         ###   ########.fr       */
+/*   Updated: 2024/07/20 23:20:45 by m3ayz00          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,6 @@ void	dupping(int is_builtin, t_redir *current, int index, int std_fd)
 {
 	if (is_builtin && !current->next)
 		dup2(current->fds[index], std_fd);
-	else
+	else if (!is_builtin)
 		dup2(current->fds[index], std_fd);
 }
